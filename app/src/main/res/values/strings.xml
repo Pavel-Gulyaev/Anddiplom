@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">And-diplom</string>
+    <string name="enter_pin">Enter pin</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_0">0</string>
+    <string name="btn_del">&#8592;</string>
+    <string name="password">pin</string>
+    <string name="title">Заголовок</string>
+    <string name="note">Note</string>
+    <string name="has_deadline">Has deadline</string>
+    <string name="pin_error">Пин должен содержать 4 цифры</string>
+    <string name="note_delete">Удалить заметку?</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string name="string_code">***zfhyuo;frtaj***</string>
+
+</resources>
