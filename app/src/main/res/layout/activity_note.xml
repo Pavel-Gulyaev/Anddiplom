@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NoteActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
      >
 
     <androidx.appcompat.widget.Toolbar
@@ -21,7 +22,8 @@
         android:layout_height="match_parent"
         android:id="@+id/list_note"
         tools:context=".NoteActivity"
-        tools:listitem="@layout/note_item"/>
+        tools:listitem="@layout/note_item"
+        android:layout_marginTop="40dp"/>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
