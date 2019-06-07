@@ -20,7 +20,10 @@
             android:layout_weight="3"
             android:id="@+id/new_pin"
             android:inputType="numberPassword"
-            android:hint="@string/password"/>
+            android:hint="@string/password"
+            android:maxLength="4"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"

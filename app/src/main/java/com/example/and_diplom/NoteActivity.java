@@ -5,12 +5,15 @@ import android.content.DialogInterface;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.SingleLineTransformationMethod;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -23,7 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NoteActivity extends AppCompatActivity {
 
-    public FloatingActionButton menu_btn;
+    //public FloatingActionButton menu_btn;
     public FloatingActionButton new_note_btn;
     private PinEditor pinEditor = new PinEditor(this);
     private boolean showed;
@@ -38,9 +41,32 @@ public class NoteActivity extends AppCompatActivity {
         initViews();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.pin_settings) {
+            Dialog menu = onCreateMenu();
+            menu.show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void initViews() {
-        menu_btn = findViewById(R.id.menu_btn);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        //menu_btn = findViewById(R.id.menu_btn);
         new_note_btn = findViewById(R.id.new_note_btn);
         noteEditor = new NoteEditor(this);
 
@@ -76,13 +102,13 @@ public class NoteActivity extends AppCompatActivity {
         }
         noteAdapter.notifyDataSetChanged();
 
-        menu_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Dialog menu = onCreateMenu();
-                menu.show();
-            }
-        });
+        //menu_btn.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        Dialog menu = onCreateMenu();
+        //        menu.show();
+        //    }
+        //});
         new_note_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

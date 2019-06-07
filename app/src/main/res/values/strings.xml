@@ -17,9 +17,12 @@
     <string name="note">Note</string>
     <string name="has_deadline">Has deadline</string>
     <string name="pin_error">Пин должен содержать 4 цифры</string>
+    <string name="pin_wrong">Неправильный пин</string>
     <string name="note_delete">Удалить заметку?</string>
     <string name="OK">OK</string>
     <string name="Cancel">Cancel</string>
     <string name="string_code">***zfhyuo;frtaj***</string>
+    <string name="pin_menu">Задать/изменить pin</string>
+
 
 </resources>

@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
 
 public class PinEditor implements Keystore {
     private Activity activity;
-    private static String PIN = "PIN";
+    private static String PIN = "PIN_CODE";
     private int pincode;
     private PinCipher pinCipher = new PinCipher();
 

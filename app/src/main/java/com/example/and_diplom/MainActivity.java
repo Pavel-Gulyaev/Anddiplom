@@ -12,22 +12,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    int count;
-    int pin;
-    int[] pinNum;
-    Button btn_1;
-    Button btn_2;
-    Button btn_3;
-    Button btn_4;
-    Button btn_5;
-    Button btn_6;
-    Button btn_7;
-    Button btn_8;
-    Button btn_9;
-    Button btn_0;
-    Button btn_del;
-    ImageView[] circles;
-    PinEditor pinEditor = new PinEditor(this);
+    private int count;
+    private int pin;
+    private int[] pinNum;
+    private Button btn_1;
+    private Button btn_2;
+    private Button btn_3;
+    private Button btn_4;
+    private Button btn_5;
+    private Button btn_6;
+    private Button btn_7;
+    private Button btn_8;
+    private Button btn_9;
+    private Button btn_0;
+    private Button btn_del;
+    private ImageView[] circles;
+    private PinEditor pinEditor = new PinEditor(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,10 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             double nextNum = pinNum[count - 1] * (Math.pow(10, i));
             pin = pin + (int) nextNum;
             clearPin();
+
         }
         if (pinEditor.checkPin(pin)) {
             openApp();
+        } else {
+            Toast.makeText(MainActivity.this, R.string.pin_wrong, Toast.LENGTH_LONG).show();
         }
+
     }
 
     private void openApp() {
