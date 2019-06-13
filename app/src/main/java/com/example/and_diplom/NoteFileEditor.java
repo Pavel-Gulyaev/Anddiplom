@@ -51,7 +51,7 @@ public class NoteFileEditor {
             BufferedWriter noteBw = new BufferedWriter(noteStreamWriter);
             noteBw.write(stringBreaker.stringAssotiation(note.getTitle()) + "\n");
             noteBw.write(note.getDeadlineText() + "\n");
-            noteBw.write(stringBreaker.stringAssotiation(note.getNote()));
+            noteBw.write(stringBreaker.stringAssotiation(note.getNote()) + "\n");
             noteBw.close();
 
         } catch (Exception e) {
