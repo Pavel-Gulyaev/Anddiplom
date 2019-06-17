@@ -73,7 +73,7 @@ public class NoteEditor {
                 String titleText = title.getText().toString();
                 String noteText = note.getText().toString();
                 String deadlineDate = deadline.getText().toString();
-                if (!((titleText.equals("")) && (noteText.equals("")) && (deadlineDate.equals("")))) {
+                if (!((titleText.equals("")) && (noteText.equals("")))) {
                     Note note = new Note(titleText, noteText, deadlineDate);
                     activity.noteAdapter.addItem(note);
                     activity.noteFileEditor.addNote(note);
