@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -26,7 +27,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NoteActivity extends AppCompatActivity {
 
-    //public FloatingActionButton menu_btn;
     public FloatingActionButton new_note_btn;
     private PinEditor pinEditor = new PinEditor(this);
     private boolean showed;
@@ -66,7 +66,6 @@ public class NoteActivity extends AppCompatActivity {
     private void initViews() {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        //menu_btn = findViewById(R.id.menu_btn);
         new_note_btn = findViewById(R.id.new_note_btn);
         noteEditor = new NoteEditor(this);
 
@@ -102,13 +101,6 @@ public class NoteActivity extends AppCompatActivity {
         }
         noteAdapter.notifyDataSetChanged();
 
-        //menu_btn.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        Dialog menu = onCreateMenu();
-        //        menu.show();
-        //    }
-        //});
         new_note_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +154,8 @@ public class NoteActivity extends AppCompatActivity {
                 dialog.cancel();
             }
         });
+        InputMethodManager imm = (InputMethodManager)getSystemService(this.getBaseContext().INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         return menuBuilder.create();
     }
 }
