@@ -33,11 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         initViews();
         if (!(pinEditor.hasPin())) {
             openApp();
         }
-
     }
 
     private void initViews() {
